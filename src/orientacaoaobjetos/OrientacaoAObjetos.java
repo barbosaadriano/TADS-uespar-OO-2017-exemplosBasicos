@@ -5,6 +5,15 @@
  */
 package orientacaoaobjetos;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import jdk.nashorn.internal.codegen.CompilerConstants;
+import passagens.local.Local;
+import passagens.pessoa.Passageiro;
+import passagens.services.ServicoDeImpressao;
+import passagens.transacao.Bilhete;
+import passagens.veiculo.Veiculo;
+
 /**
  *
  * @author Administrador
@@ -15,36 +24,32 @@ public class OrientacaoAObjetos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Pessoa titular = new Pessoa();
-        titular.nome = "ADRIANO";
-        titular.cpf = "111.111.111.11";
 
-        ContaBancaria conta = new ContaBancaria();
-        conta.agencia = "2721-9";
-        conta.numeroDaConta = "123123123";
-        conta.titular = titular;
-        conta.alterarSituacao(conta.SITUACAO_ATIVO);
-        System.out.println(conta.verificarSaldo());
-        System.out.println(conta.titular.nome);
+        Veiculo veiculo = new Veiculo();
+        veiculo.setPlaca("AXD-1023");
         
-        conta.depositar(125.32);
-        System.out.println(conta.verificarSaldo());
-        conta.sacar(50);
-        System.out.println(conta.verificarSaldo());
+        Passageiro passageiro = new Passageiro();
+        passageiro.setNome("Adriano");
         
-        ContaBancaria destino = new ContaBancaria();
-        destino.numeroDaConta = "123";
-        destino.agencia = "2222";
-        destino.titular = titular;
+        Local origem =  new Local();
+        origem.setCidade("Terra Roxa");
+        origem.setEstado("PR");
         
-        conta.transferir(70.32, destino);
+        Local destino = new Local();
+        destino.setCidade("Palotina");
+        destino.setEstado("PR");
         
-        System.out.println(conta.verificarSaldo());
-        System.out.println(destino.verificarSaldo());
+        Bilhete bilhete = new Bilhete();
+        bilhete.setNumero(1);
+        bilhete.setPoltrona(10);
+        bilhete.setPassageiro(passageiro);
+        bilhete.setOrigem(origem);
+        bilhete.setDestino(destino);
+        bilhete.setVeiculo(veiculo);
         
-        
-        
+        ServicoDeImpressao si = new ServicoDeImpressao();
+        si.imprimirBilhete(bilhete);
+
     }
     
 }
