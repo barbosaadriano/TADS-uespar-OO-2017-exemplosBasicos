@@ -54,7 +54,4 @@ public class Pessoa implements Lessionar {
     public void aplicarProva() {
         System.out.println("Estou aplicando prova!!");
     }
-    
-    
-    
 }

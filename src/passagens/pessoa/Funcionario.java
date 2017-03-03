@@ -33,6 +33,11 @@ public class Funcionario extends Pessoa{
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    @Override
+    public String getTipo() {
+        return "Funcionario";
+    }
     
     
     

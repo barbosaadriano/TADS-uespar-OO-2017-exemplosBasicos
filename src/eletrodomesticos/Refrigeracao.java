@@ -3,21 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package passagens.pessoa;
+package eletrodomesticos;
 
 /**
  *
  * @author Administrador
  */
-public class Passageiro extends Pessoa {
-
-    public Passageiro() {
-        super("Passageiro");
-    }
-
-    @Override
-    public String getTipo() {
-        return "Passageiro";
-    }
+public interface Refrigeracao {
+    
+    public void refrigerar(float temperatura);
     
 }

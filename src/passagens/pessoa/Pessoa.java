@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Administrador
  */
-public class Pessoa {
+public abstract class Pessoa {
     
     private String nome;
     private String CPF;
@@ -19,10 +19,10 @@ public class Pessoa {
     private Date dataNascimento;
     private String telefone;
     
-    private String tipo;
+    //private String tipo;
 
     public Pessoa(String tipo) {
-        this.tipo = tipo;
+        //this.tipo = tipo;
     }
     
     public String getNome() {
@@ -65,8 +65,10 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
+//    public String getTipo() {
+//        //return tipo;
+//    }
        
+    public abstract String getTipo();    
+    
 }

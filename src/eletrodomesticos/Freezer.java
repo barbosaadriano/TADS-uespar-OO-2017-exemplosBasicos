@@ -3,21 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package passagens.pessoa;
+package eletrodomesticos;
 
 /**
  *
  * @author Administrador
  */
-public class Passageiro extends Pessoa {
-
-    public Passageiro() {
-        super("Passageiro");
-    }
+public class Freezer extends Refrigerador {
 
     @Override
-    public String getTipo() {
-        return "Passageiro";
+    public void refrigerar(float temperatura) {
+        System.out.println("Refrigerando a "+temperatura+" graus");
     }
     
 }
